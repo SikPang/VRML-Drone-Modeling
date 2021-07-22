@@ -1,0 +1,1118 @@
+#VRML V2.0 utf8
+
+#20162340 Kwang-sik Song 2018.11.14 ~ 
+
+Viewpoint { position 0 .75 30
+	description	"Front"
+	fieldOfView	0.78
+}
+Viewpoint { position 0 .75 10
+	description	"Inside"
+	fieldOfView	0.78
+}
+Viewpoint { position -2 1.75 2.5
+	orientation	0 1 0 1.57
+	description	"Drone1"
+	fieldOfView	0.78
+}
+Viewpoint { position -2 1.75 -2
+	orientation	0 1 0 1.57
+	description	"Drone2"
+	fieldOfView	0.78
+}
+Viewpoint { position 2 1.75 2.5
+	orientation	0 1 0 -1.57
+	description	"Drone3"
+	fieldOfView	0.78
+}
+NavigationInfo {headlight FALSE	}
+Background { leftUrl "left.jpg" rightUrl "right.jpg"
+			 frontUrl "fronts.jpg" backUrl "back.jpg"
+			 topUrl "top.jpg" bottomUrl "bottom.jpg"}
+
+DEF	Drone1 Transform	{ scale	0.2 0.2 0.2  translation -5 -0.1 2.5 rotation 0 1 0 0.78
+	children [
+	Shape{
+		geometry Box { size	0.2 0.1 4 }
+		appearance Appearance {
+			material Material { diffuseColor 0.7 0 0 }
+		}
+	}
+	Shape{
+		geometry Box { size	4 0.1 0.2 }
+		appearance Appearance {
+			material Material { diffuseColor 0.7 0 0 }
+		}
+	}
+	Transform { translation	0 0.6 0
+		children Shape{
+			geometry Box { size	1.8 0.05 0.05 }
+			appearance Appearance {
+				material Material { diffuseColor 1 1 1 }
+			}
+		}
+	}
+	Transform { translation	0 0.6 0
+		children Shape{
+			geometry Box { size	0.05 0.05 1.8 }
+			appearance Appearance {
+				material Material { diffuseColor 1 1 1 }
+			}
+		}
+	}
+	Transform { rotation  0 1 0 0.785
+		children Shape{
+			geometry Box { size	0.5 0.1 0.5 }
+			appearance Appearance {
+				material Material { diffuseColor 0.7 0 0 }
+			}
+		}
+	}
+	Transform { translation	0 0.7 0
+		children Shape{
+			geometry Box { size	1.3 0.1 1.3 }
+			appearance Appearance {
+				material Material { diffuseColor 0 0.3 0 }
+			}
+		}
+	}
+	Transform { translation	0 0.3 0	rotation 0 1 0 0.785
+		children Shape{
+			geometry Box { size	2 0.4 0.5 }
+			appearance Appearance {
+				material Material { diffuseColor 0.2 0.2 0.2 }
+			}
+		}
+	}
+
+	DEF	Joint1 Group	{
+		children [	  
+			Transform {	 translation 2 0.1 0
+				children Shape {
+					geometry Cylinder { radius 0.2 height 0.3 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			} 
+
+			Transform {	 translation 2 -0.01 0
+				children Shape {
+					geometry Box { size 0.2 0.15 0.2 }
+					appearance Appearance {
+						material Material {diffuseColor	0.55 0.55 0.55 }
+					}
+				}
+			} 
+
+			Transform {	 translation 2 0.5 0
+				children Shape {
+					geometry Cylinder { radius 0.15 height 0.7 }
+					appearance Appearance {
+						material Material {diffuseColor	0.55 0.55 0.55 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.67 0
+				children Shape {
+					geometry Cylinder { radius 0.2 height 0.3 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+	   
+	    	Transform {	 translation 2 0.74 0
+				children Shape {
+					geometry Cylinder { radius 1.15 height 0.45  bottom FALSE top FALSE}
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.67 0
+				children Shape {
+					geometry Box { size 2.3 0.3 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+   
+   			Transform {	 translation 1.1 0.69 0.9 rotation 0 1 0 0.405
+				children Shape {
+					geometry Box { size 0.3 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 0.9 0.69 1.1 rotation 0 1 0 1.165
+				children Shape {
+					geometry Box { size 0.3 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 0.95 0.69 0.95 rotation 0 1 0 0.785
+				children Shape {
+					geometry Cylinder { radius 0.1 height 0.2}
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 1.2 0.69 1.2 rotation 0 1 0 0.705
+				children Shape {
+					geometry Box { size 0.61 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 1.2 0.69 1.2 rotation 0 1 0 0.865
+				children Shape {
+					geometry Box { size 0.61 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+		]
+	}
+	Transform {rotation 0 1 0 1.57 children	USE	Joint1 }
+	Transform {rotation 0 1 0 3.14 children	USE	Joint1 }
+	Transform {rotation 0 1 0 4.71 children	USE	Joint1 }
+
+	DEF	Propeller1 Transform	{ center 2 0 0
+		children [
+		   Transform {	 translation 2 0.9 0
+				children Shape {
+					geometry Cylinder { radius 0.05 height 0.1}
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}								  
+	    	Transform {	 translation 2.55 0.9 0	 rotation 1 0 0 0.5
+				children Shape {
+					geometry Box { size 1.05 0.01 0.15 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}  
+
+			Transform {	 translation 1.45 0.9 0	 rotation 1 0 0 -0.5
+				children Shape {
+					geometry Box { size 1.05 0.01 0.15 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.9 0.55	  rotation 0 0 1 0.5
+				children Shape {
+					geometry Box { size 0.15 0.01 1.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.9 -0.55  rotation 0 0 1 -0.5
+				children Shape {
+					geometry Box { size 0.15 0.01 1.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}
+		]  
+	}
+	Transform {rotation 0 1 0 1.57 children	USE	Propeller1 }
+	Transform {rotation 0 1 0 3.14 children	USE	Propeller1 }
+	Transform {rotation 0 1 0 4.71 children	USE	Propeller1 }
+	DEF MS1 TouchSensor {} 
+]}
+
+DEF	TS1 TimeSensor { cycleInterval 0.3 loop TRUE  stopTime 1}
+DEF	Rotation1 OrientationInterpolator {	
+	key	[0.0, 0.5, 1.0]	
+	keyValue [0.0 1.0 0.0 0.0, 0.0 1.0 0.0 3.14, 0.0 1.0 0.0 6.28]
+}
+ROUTE MS1.touchTime TO TS1.startTime
+ROUTE TS1.fraction_changed TO Rotation1.set_fraction	
+ROUTE Rotation1.value_changed TO Propeller1.rotation
+ROUTE MS1.touchTime TO TS1.stopTime
+
+DEF	Drone2 Transform { translation 5 0 -2	 scale 0.4 0.4 0.4	rotation 0 1 0 -1.57
+	children [
+		Transform {	 scale 0.9 0.45 0.9
+		children Shape{
+			geometry Sphere	{ radius 0.85 }
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 } }
+		}}
+
+		Shape {
+			geometry Cylinder { height 0.1 radius 0.772 }
+			appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6 } }
+		}
+
+		DEF Eye Transform {
+			children [
+				Transform {	 translation 0.3 0 0.7 rotation 0 0 1 -0.4
+					children Shape {
+					geometry Box {size 0.05 0.02 0.1	}
+					appearance Appearance { material Material {diffuseColor 0.2 0.4 1} }
+				}}
+				Transform {	 translation 0.26 0 0.7 rotation 0 0 1 0.4
+					children Shape {
+					geometry Box {size 0.05 0.02 0.1	}
+					appearance Appearance { material Material {diffuseColor 0.2 0.4 1} }
+				}}
+		]}												   
+		Transform {translation -0.56 0 0 children USE Eye }
+
+		Transform {translation 0 -0.2 0.64 scale 1 0.5 0.01	rotation 1 0 0 0.9
+			children Shape {
+				geometry Sphere	{radius 0.1 }
+				appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6 } }
+			}
+		}
+
+		DEF	Joint2 Transform { rotation	0 1 0 -0.78
+			children [
+				
+
+				Transform { translation	1 0 0 rotation 0 0 1 1.57
+					children Shape {
+						geometry Cylinder { height 0.6 radius 0.05 }
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform { translation	1.4 0.05 0
+					children Shape {
+						geometry Cylinder { height 0.27 radius 0.13 }
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform { translation	1.4 0 0
+					children Shape {
+						geometry Cylinder { height 0.1 radius 0.131 }
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform { translation	1.4 -0.08 0 scale 1 0.4 1
+					children Shape {
+						geometry Sphere	{ radius 0.13 }
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform { translation	1.4 0.18 0 scale 1 0.4 1
+					children Shape {
+						geometry Sphere	{ radius 0.13 }
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+			]
+		}
+		Transform { rotation 0 1 0 1.57 children USE Joint2 }
+		Transform { rotation 0 1 0 3.14 children USE Joint2 }
+		Transform { rotation 0 1 0 4.71 children USE Joint2 }
+
+		DEF	Propeller2 Transform {center	1 0 0.98
+			children Transform { rotation 0 1 0 -0.78 children [
+
+				
+				Transform { translation	1.4 0.22 0
+					children Shape {
+						geometry Box { size	0.05 0.05 0.05 }
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform {	translation	1.4 0.25 0
+					children Shape {
+						geometry Box { size 0.22 0.01 0.08 }
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform {	translation	1.4 0.25 0
+					children Shape {
+						geometry Box { size 0.22 0.01 0.08 }
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform {	translation	1.4 0.27 0
+					children Shape {
+						geometry Cylinder {radius 0.03 height 0.04}
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform {	translation	1.48 0.27 0
+					children Shape {
+						geometry Cylinder {radius 0.03 height 0.04}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform {	translation	1.32 0.27 0
+					children Shape {
+						geometry Cylinder {radius 0.03 height 0.04}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform {	translation	1.4 0.293 0
+					children Shape {
+						geometry Box { size 0.22 0.005 0.08 }
+						appearance Appearance { material Material { diffuseColor 0.6 0.6 0.6}}
+					}
+				}
+				Transform {	translation	1.4 0.3 0
+					children Shape {
+						geometry Box { size 0.2 0.015 0.08}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+
+				Transform {	translation	1.8 0.27 0 scale 1 0.01 0.25  rotation 1 0 0 0.2
+					children Shape {
+						geometry Sphere {radius 0.35}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform {	translation	1 0.27 0 scale 1 0.01 0.25 rotation 1 0 0 -0.2
+					children Shape {
+						geometry Sphere {radius 0.35}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+			]
+		}
+		}
+		Transform { rotation 0 1 0 1.57 children USE Propeller2 }
+		Transform { rotation 0 1 0 3.14 children USE Propeller2 }
+		Transform { rotation 0 1 0 4.71 children USE Propeller2 }
+		DEF MS2 TouchSensor {} 
+	]
+}
+DEF	TS2 TimeSensor { cycleInterval 0.2 loop TRUE  stopTime 1}
+DEF	Rotation2 OrientationInterpolator {	
+	key	[0.0, 0.5, 1.0]	
+	keyValue [0.0 1.0 0.0 0.0, 0.0 1.0 0.0 3.14, 0.0 1.0 0.0 6.28]
+}
+ROUTE MS2.touchTime TO TS2.startTime
+ROUTE TS2.fraction_changed TO Rotation2.set_fraction	
+ROUTE Rotation2.value_changed TO Propeller2.rotation
+ROUTE MS2.touchTime TO TS2.stopTime
+
+DEF	Drone3 Transform {	translation 5 0.1 2.5 scale 0.5 0.5 0.5	 rotation 0 1 0 -1.57
+	children [
+		
+		Shape {
+			geometry Box {size 0.7 0.22 1.8 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+		}
+		Transform {	  translation 0 -0.22 -0.15
+			children Shape {
+			geometry Box {size 0.7 0.22 1.5 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform {	  translation 0.325 -0.22 0
+			children Shape {
+			geometry Box {size 0.05 0.22 1.8 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform {	  translation -0.325 -0.22 0
+			children Shape {
+			geometry Box {size 0.05 0.22 1.8 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform {	  translation 0 0 0.901
+			children Shape {
+			geometry Box {size 0.55 0.18 0.01 }
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform {	  translation 0.351 -0.155 -0.05
+			children Shape {
+			geometry Box {size 0.001 0.35 1.7 }
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform {	  translation -0.351 -0.155 -0.05
+			children Shape {
+			geometry Box {size 0.001 0.35 1.7 }
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation 0.271 -0.11 -0.401
+			children Shape {
+				geometry Box {size 0.2 0.441 1 }
+				appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation -0.271 -0.11 -0.401
+			children Shape {
+				geometry Box {size 0.2 0.441 1 }
+				appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation 0 -0.104 -0.851	
+			children Shape {
+				geometry Box {size 0.73 0.43 0.1 }
+				appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform {	  translation 0 -0.326 -0.151
+			children Shape {
+			geometry Box {size 0.7 0.01 1.5 }
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation 0.15  -0.1099 -0.3 rotation	0 1 0 0.1#
+			children Shape {
+				geometry Box {size 0.15 0.441 1}
+				appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform { translation -0.15  -0.1099 -0.3 rotation	0 1 0 -0.1#
+			children Shape {
+				geometry Box {size 0.15 0.441 1}
+				appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		
+
+		Transform {	  translation 0.25 0 0.901	 rotation 1 0 0 1.57
+			children Shape {
+			geometry Cylinder {radius 0.09 height 0.01}
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform {	  translation -0.25 0 0.901	 rotation 1 0 0 1.57
+			children Shape {
+			geometry Cylinder {radius 0.09 height 0.01}
+			appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform {	  translation 0.25 0 0.902	 rotation 1 0 0 1.57
+			children Shape {
+			geometry Cylinder {radius 0.05 height 0.01}
+			appearance Appearance { material Material { diffuseColor 0 0 0 }}
+			}
+		}
+		Transform {	  translation -0.25 0 0.902	 rotation 1 0 0 1.57
+			children Shape {
+			geometry Cylinder {radius 0.05 height 0.01}
+			appearance Appearance { material Material { diffuseColor 0 0 0 }}
+			}
+		}
+		Transform {	  translation 0.265 0.015 0.903	 rotation 1 0 0 1.57   
+			children Shape {
+			geometry Cylinder {radius 0.01 height 0.01}
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform {	  translation -0.235 0.015 0.903	 rotation 1 0 0 1.57
+			children Shape {
+			geometry Cylinder {radius 0.01 height 0.01}
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform { translation	0 -0.22 0.8 rotation  0 0 1 1.57
+			children Shape {
+				geometry Cylinder { radius 0.1 height 0.5 }
+				appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation	0 -0.22 0.8 rotation  0 0 1 1.57
+			children Shape {
+				geometry Cylinder { radius 0.11 height 0.3 }
+				appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation	0 -0.22 0.86 rotation  1 0 0 1.57
+			children Shape {
+				geometry Cylinder { radius 0.1 height 0.2 }
+				appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+			}
+		}
+		Transform { translation	0 -0.22 0.965 rotation  1 0 0 1.57
+			children Shape {
+				geometry Cylinder { radius 0.06 height 0.01 }
+				appearance Appearance { material Material { diffuseColor 0 0 0 }}
+			}
+		}
+		Transform { translation	0.018 -0.202 0.965 rotation  1 0 0 1.57
+			children Shape {
+				geometry Cylinder { radius 0.015 height 0.01 }
+				appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+			
+		DEF	Joint3 Transform {
+			children [
+			   
+			    
+				Transform	{ translation 0.6 -0.135 0.7
+					children Shape {
+						geometry Box { size 0.7 0.2 0.085 }
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+				}
+				Transform	{ translation 0.6 -0.24 0.7
+					children Shape {
+						geometry Box { size 0.45 0.01 0.085 }
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1  }}
+					}
+				}
+				Transform	{ translation 0.6 -0.24 0.7
+					children Shape {
+						geometry Box { size 0.15 0.011 0.0851 }
+						appearance Appearance { material Material { diffuseColor 0.94 0.37 0.37 }}
+					}
+				}
+				Transform	{ translation 1 -0.11 0.7
+					children Shape {
+						geometry Cylinder { radius 0.1 height 0.3}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+				}
+			   Transform	{ translation 1 -0.02 0.7
+					children Shape {
+						geometry Cylinder { radius 0.101 height 0.18}
+						appearance Appearance { material Material { diffuseColor 1 1 1 }}
+					}
+				}
+			   Transform	{ translation 1 -0.095 0.7
+					children Shape {
+						geometry Cylinder { radius 0.102 height 0.014}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+				}
+			   Transform	{ translation 1 -0.075 0.7
+					children Shape {
+						geometry Cylinder { radius 0.102 height 0.01}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+				}
+			  Transform	{ translation 1 -0.06  0.7
+					children Shape {
+						geometry Cylinder { radius 0.102 height 0.006}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+				}   
+			  Transform	{ translation 1 0.08 0.7
+					children Shape {
+						geometry Cylinder { radius 0.102 height 0.014}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+			  }
+
+			  Transform	{ translation 1.1 -0.3 0.7
+					children Shape {
+						geometry Box { size 0.02 0.4 0.15}
+						appearance Appearance { material Material { diffuseColor 1 1 1 }}
+					}
+			  }
+			  Transform	{ translation 1.08 -0.35 0.7
+					children Shape {
+						geometry Box { size 0.018 0.3 0.15}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+			  }
+			  Transform	{ translation 1.03 -0.3 0.7
+					children Shape {
+						geometry Box { size 0.015 0.1 0.1}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+			  }
+			  Transform	{ translation 1.05 -0.37 0.7	rotation 0 0 1 0.7
+					children Shape {
+						geometry Box { size 0.015 0.07 0.1}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+			  }
+
+			]
+		}
+		Transform { translation 0 0 -1.4 children USE Joint3 }
+		Transform { center 0 0 0.7 rotation 0 1 0 3.14 children USE Joint3	}
+		Transform { translation 0 0 2.8 center 0 0 -1.4 rotation 0 1 0 3.14 children USE Joint3	}
+
+		DEF	Propeller3 Transform {	center 1 0 0.7
+			children [
+			   
+				Transform	{ translation 1 0.1 0.7
+					children Shape {
+						geometry Cylinder { radius 0.07 height 0.04}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1 }}
+					}
+				}
+				Transform {	translation	1.2 0.1 0.7 scale 1 0.01 0.25  rotation 1 0 0 0.2
+					children Shape {
+						geometry Sphere {radius 0.2}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform {	translation	0.8 0.1 0.7 scale 1 0.01 0.25 rotation 1 0 0 -0.2
+					children Shape {
+						geometry Sphere {radius 0.2}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}  
+				Transform {	translation	1.4 0.103 0.69 rotation 1 0 0 0.2
+					children Shape {
+						geometry Box {size 0.3 0.001 0.07}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform {	translation	0.6 0.103 0.71 rotation 1 0 0 -0.2
+					children Shape {
+						geometry Box {size 0.3 0.001 0.07}
+						appearance Appearance { material Material { diffuseColor 0.1 0.1 0.1}}
+					}
+				}
+				Transform {	translation	0.45 0.103 0.71 rotation 1 0 0 -0.2
+					children Shape {
+						geometry Box {size 0.03 0.0011 0.071}
+						appearance Appearance { material Material { diffuseColor 1 1 1}}
+					}
+				}
+				Transform {	translation	1.55 0.103 0.69 rotation 1 0 0 0.2
+					children Shape {
+						geometry Box {size 0.03 0.0011 0.071}
+						appearance Appearance { material Material { diffuseColor 1 1 1}}
+					}
+				}
+			]
+		}
+		Transform { translation 0 0 -1.4 children USE Propeller3 }
+		Transform { center 0 0 0.7 rotation 0 1 0 3.14 children USE Propeller3	}
+		Transform { translation 0 0 2.8 center 0 0 -1.4 rotation 0 1 0 3.14 children USE Propeller3	}
+		DEF	MS3	TouchSensor	{}
+	]
+}
+DEF	TS3 TimeSensor { cycleInterval 0.2 loop TRUE  stopTime 1}
+DEF	Rotation3 OrientationInterpolator {	
+	key	[0.0, 0.5, 1.0]	
+	keyValue [0.0 1.0 0.0 0.0, 0.0 1.0 0.0 3.14, 0.0 1.0 0.0 6.28]
+}
+ROUTE MS3.touchTime TO TS3.startTime
+ROUTE TS3.fraction_changed TO Rotation3.set_fraction	
+ROUTE Rotation3.value_changed TO Propeller3.rotation
+ROUTE MS3.touchTime TO TS3.stopTime
+
+
+
+########### Floor ###########
+Transform { translation	0 -2 0
+	children Shape {
+		geometry Box {size 15 0.01 20 }
+		appearance Appearance { texture	ImageTexture { url "floor.jpg" }}
+	}
+}
+Transform { translation	0 -2.01 0
+	children Shape {
+		geometry Box {size 100 0.01 100 }
+		appearance Appearance { texture	ImageTexture { url "floor1.jpg" }}
+	}
+}
+
+########### Auto Door ###########
+NavigationInfo { avatarSize	[.25 1.6 1]}
+
+DEF	door_l Transform { translation -1 0 10
+	children [
+		DEF	door Shape {
+			geometry Box {size 2 4 .001}
+			appearance Appearance { material Material {transparency	.6}} 
+		}
+		Transform { translation	.95 0 0
+			children DEF stick Shape {
+				geometry Box { size	.1 4 .0011}
+				appearance Appearance {material	Material {diffuseColor 0.1 0.1 0.1}}
+			}
+		}
+		Transform { translation	0 1.95 0
+			children DEF bar Shape {
+				geometry Box { size	2 .1 .0011}
+				appearance Appearance {material	Material {diffuseColor 0.1 0.1 0.1}}
+			}
+		}
+		Transform { translation	0 -1.95 0	
+			children DEF auto Shape {
+				geometry Box { size	2 .1 .0011}
+				appearance Appearance {material	Material {diffuseColor 0.1 0.1 0.1}}
+			}
+		}
+		Transform { translation	-.95 0 0 children USE stick	}										 
+	]
+}
+DEF	door_r Transform { translation 1 0 10
+	children [ USE door										  
+		Transform { translation	-.95 0 0 children USE stick	}
+		Transform { translation	.95 0 0 children USE stick	}
+		Transform { translation	0 1.95 0 children USE bar	}
+		Transform { translation	0 -1.95 0 children USE bar	}
+	]
+}
+DEF	prox ProximitySensor { size	5 10 15 center	0 0 10 }
+DEF	time TimeSensor	{ cycleInterval	1 }
+DEF	time2 TimeSensor	{ cycleInterval	1 }
+DEF	open_pos_l PositionInterpolator {
+	key[0, 1]
+	keyValue [-1 0 10, -3 0 10]
+}
+DEF	open_pos_r PositionInterpolator {
+	key[0, 1]
+	keyValue [1 0 10, 3 0 10]
+}
+DEF	close_pos_l PositionInterpolator {
+	key[0, 1]
+	keyValue [-3 0 10, -1 0 10]
+}
+DEF	close_pos_r PositionInterpolator {
+	key[0, 1]
+	keyValue [ 3 0 10, 1 0 10]
+}
+ROUTE prox.enterTime TO	time.startTime
+ROUTE time.fraction_changed	TO open_pos_l.set_fraction
+ROUTE open_pos_l.value_changed TO door_l.translation
+ROUTE time.fraction_changed	TO open_pos_r.set_fraction
+ROUTE open_pos_r.value_changed TO door_r.translation
+
+ROUTE prox.exitTime TO time2.startTime
+ROUTE time2.fraction_changed	TO close_pos_l.set_fraction
+ROUTE close_pos_l.value_changed TO door_l.translation
+ROUTE time2.fraction_changed	TO close_pos_r.set_fraction
+ROUTE close_pos_r.value_changed TO door_r.translation
+
+
+########### Front Wall ###########
+Transform {translation 4.75 0 10
+	children Shape {
+		geometry Box {size 5.5 4 .001}
+		appearance Appearance { material Material {transparency .6}}
+	}
+}
+Transform {translation -4.75 0 10
+	children Shape {
+		geometry Box {size 5.5 4 .001}
+		appearance Appearance { material Material {transparency .6}}
+	}
+}
+Transform { translation	1.95 0 10 children USE stick	}
+Transform { translation	-1.95 0 10 children USE stick	}
+Transform { translation	7.45 0 10 children USE stick	}
+Transform { translation	-7.45 0 10 children USE stick	}
+
+Transform { translation	-3 1.95 10 children USE bar	}
+Transform { translation	-5 1.95 10 children USE bar	}
+Transform { translation	-6.5 1.95 10 children USE bar	}
+Transform { translation	3 1.95 10 children USE bar	}
+Transform { translation	5 1.95 10 children USE bar	}
+Transform { translation	6.5 1.95 10 children USE bar	}
+
+Transform { translation	-3 -1.95 10 children USE bar	}
+Transform { translation	-5 -1.95 10 children USE bar	}
+Transform { translation	-6.5 -1.95 10 children USE bar	}
+Transform { translation	3 -1.95 10 children USE bar	}
+Transform { translation	5 -1.95 10 children USE bar	}
+Transform { translation	6.5 -1.95 10 children USE bar	}
+
+Transform {	translation	0 3.25 10
+	children Shape {
+		geometry Box { size	4 2 0.1 }
+		appearance Appearance { texture	ImageTexture { url "dronShop.jpg" } }
+	}
+}
+Transform {	translation	0 3.25 10
+	children Shape {
+		geometry Box { size	15 2.5 0.09 }
+		appearance Appearance {texture	ImageTexture { url "front.jpg" } }
+	}
+}
+Transform {	translation	0 3.25 9.9
+	children Shape {
+		geometry Box { size	15 2.5 0.09 }
+		appearance Appearance {texture	ImageTexture { url "wall.jpg" } }
+	}
+}
+
+
+									   
+########### Other Wall ###########
+Transform { translation 0 1.25 -10
+	children Shape {
+		geometry Box { size	15 6.5 0.1 }
+		appearance Appearance { texture ImageTexture {url "wall.jpg"}}
+	}
+}
+DEF Wall Transform { translation -7.5 1.25 0
+	children Shape {
+		geometry Box { size	0.1 6.5 20 }
+		appearance Appearance { texture ImageTexture {url "wall.jpg"}}
+	}
+}
+Transform { rotation 0 1 0 3.14 children USE  Wall }
+
+
+
+########### Ceiling ###########
+Transform { translation	0 4.5 0
+	children Shape {
+		geometry Box {size 15 0.01 20 }
+		appearance Appearance { texture ImageTexture {url "ceiling.jpg"}}
+	}
+}
+Transform { translation	0 4.51 0
+	children Shape {
+		geometry Box {size 15 0.01 20 }
+		appearance Appearance { texture ImageTexture {url "ceiling1.jpg"}}
+	}
+}
+
+
+########### Display Stand ###########
+
+DEF Display1 Transform {	translation	-5 -1 2.5 rotation 0 1 0 1.57	  scale 0.9 0.9 0.9
+	children [ 
+		Shape {
+			geometry Box { size 1.5 1.8 1.5 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+		}
+		Transform {	 translation 0 -1 0
+			children Shape	{
+				geometry Box { size 1 0.2 1}
+				appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform { translation 0 0.9 0
+			children Shape {
+				geometry Box { size	1.501 0.05 1.501 }
+				appearance Appearance { material Material { diffuseColor 0.14 0.65 0.74} }
+			}
+		}
+		Transform { translation 0 0.3 0.75
+			children Shape {
+				geometry Box { size	0.7 0.7 0.01 }
+				appearance Appearance { texture ImageTexture {url "Drone1.png"}}
+			}
+		}
+		Transform {
+			children [ Anchor {
+				description	"Detail"
+				url	"Drone1.wrl"
+				parameter "target=_blank"
+				children [
+					Transform { translation 0 0.97 0.75   rotation	1 0 0 -0.3
+						children Shape {
+							geometry Box { size	0.2 0.1 0.01 }
+							appearance Appearance { texture ImageTexture {url "nametag1.jpg"}}
+						}
+					}
+					Transform { translation 0 0.97 0.72   rotation	1 0 0 0.3
+						children Shape {
+							geometry Box { size	0.2 0.1 0.01 }
+							appearance Appearance { material Material { diffuseColor 1 1 1 }}
+						}
+					}
+				]
+			}]
+		}						
+	]
+}
+Transform { translation	0 0 4.5 children	USE	Display1	} 
+
+DEF Display2 Transform {	translation	-5 -1 -2 rotation 0 1 0 1.57	scale 0.9 0.9 0.9
+	children [ 
+		Shape {
+			geometry Box { size 1.5 1.8 1.5 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+		}
+		Transform {	 translation 0 -1 0
+			children Shape	{
+				geometry Box { size 1 0.2 1}
+				appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform { translation 0 0.9 0
+			children Shape {
+				geometry Box { size	1.501 0.05 1.501 }
+				appearance Appearance { material Material { diffuseColor 0.14 0.65 0.74 }}
+			}
+		}
+		Transform { translation 0 0.3 0.75
+			children Shape {
+				geometry Box { size	0.7 0.7 0.01 }
+				appearance Appearance { texture ImageTexture {url "Drone2.jpg"}}
+			}
+		}
+		Transform {
+			children [ Anchor {
+				description	"Detail"
+				url	"Drone2.wrl"
+				parameter "target=_blank"
+				children [
+					Transform { translation 0 0.97 0.75   rotation	1 0 0 -0.3
+						children Shape {
+							geometry Box { size	0.2 0.1 0.01 }
+							appearance Appearance { texture ImageTexture {url "nametag2.jpg"}}
+						}
+					}
+					Transform { translation 0 0.97 0.72   rotation	1 0 0 0.3
+						children Shape {
+							geometry Box { size	0.2 0.1 0.01 }
+							appearance Appearance { material Material { diffuseColor 1 1 1 }}
+						}
+					}
+				]
+			}]
+		}	
+	]
+}
+Transform { translation	0 0 -4 children	USE	Display2 rotation 0 1 0 -3.14	}
+
+DEF Display3 Transform {	translation	5 -1 2.5 rotation 0 1 0 -1.57   scale 0.9 0.9 0.9
+	children [ 
+		Shape {
+			geometry Box { size 1.5 1.8 1.5 }
+			appearance Appearance { material Material { diffuseColor 1 1 1 }}
+		}
+		Transform {	 translation 0 -1 0
+			children Shape	{
+				geometry Box { size 1 0.2 1}
+				appearance Appearance { material Material { diffuseColor 1 1 1 }}
+			}
+		}
+		Transform { translation 0 0.9 0
+			children Shape {
+				geometry Box { size	1.501 0.05 1.501 }
+				appearance Appearance { material Material { diffuseColor 0.14 0.65 0.74 }}
+			}
+		}
+		Transform { translation 0 0.3 0.75
+			children Shape {
+				geometry Box { size	0.7 0.7 0.01 }
+				appearance Appearance { texture ImageTexture {url "Drone3.jpg"}}
+			}
+		}
+		Transform {
+			children [ Anchor {
+				description	"Detail"
+				url	"Drone3.wrl"
+				parameter "target=_blank"
+				children [
+					Transform { translation 0 0.97 0.75   rotation	1 0 0 -0.3
+						children Shape {
+							geometry Box { size	0.2 0.1 0.01 }
+							appearance Appearance { texture ImageTexture {url "nametag3.jpg"}}
+						}
+					}
+					Transform { translation 0 0.97 0.72   rotation	1 0 0 0.3
+						children Shape {
+							geometry Box { size	0.2 0.1 0.01 }
+							appearance Appearance { material Material { diffuseColor 1 1 1 }}
+						}
+					}
+				]
+			}]
+		}	
+	]
+}														  
+Transform { translation	0 0 4.5 children	USE	Display3	}	
+
+Transform	{ translation 0 0 4.5 children	USE	Drone1	}
+Transform	{ translation 0 0 -4  rotation 0 1 0 3.14 children USE Drone2 }
+Transform { translation	0 0 4.5 children USE Drone3 }
+
+
+####### Counter #######
+Transform { translation	0 -.9 -6
+	children Shape {
+		geometry Box { size	8 2 1 }
+		appearance Appearance {texture ImageTexture {url "counter.jpg"}}
+	}
+}
+Transform { translation	0 .1 -6
+	children Shape {
+		geometry Box { size	8.1 0.1 1.1 }
+		appearance Appearance {material Material { diffuseColor 1 1 1 }}
+	}
+}
+
+
+####### Light #######
+
+DEF	Light Transform	{ translation -7.3 3. -2
+	children [
+		Shape {
+			geometry Sphere	{ radius 0.1}
+			appearance Appearance {material	Material {diffuseColor 1 1 0}}
+		}
+		Shape {
+			geometry Cylinder { radius 0.2 height 0.5 bottom FALSE top FALSE }
+			appearance Appearance {material	Material {diffuseColor 1 0.8 0.59}}
+		}
+		
+		PointLight {
+			#location -7.3 2 0
+			color	1 1 1
+			radius 10000
+			attenuation	0.3 0.2 0
+		}
+
+	]
+}
+Transform {translation 0 0 -5 children USE Light }
+Transform {translation 0 0 5 children USE Light }
+Transform {translation 0 0 9.5 children USE Light }	
+												  
+Transform {translation 14.5 0 0 children USE Light }
+Transform {translation 14.5 0 -5 children USE Light }
+Transform {translation 14.5 0 5 children USE Light }	
+Transform {translation 14.5 0 9.5 children USE Light }
+
+###### WallPaper ######
+Transform {	translation	0 1.7 -9.95
+	children Shape {
+		geometry Box { size	4 1.5 0.1 }
+		appearance Appearance { texture	ImageTexture { url "dronShop.jpg" } }
+	}
+}
+Transform {	translation	-7.45 1.4 -3	rotation 0 1 0 1.57	 scale 0.9 0.9 0.9 
+	children Shape {
+		geometry Box { size	3 1.7 0.01 }
+		appearance Appearance { texture	ImageTexture { url "drone4.jpg" } }
+	}
+}
+Transform {	translation	7.45 1.4 -3	rotation 0 1 0 1.57	scale 0.9 0.9 0.9	  
+	children Shape {
+		geometry Box { size	3 1.7 0.01 }
+		appearance Appearance { texture	ImageTexture { url "drone5.jpg" } }
+	}
+}
+Transform {	translation	-7.45 1.4 4	rotation 0 1 0 1.57	scale 0.9 0.9 0.9	  
+	children Shape {
+		geometry Box { size	3 1.7 0.01 }
+		appearance Appearance { texture	ImageTexture { url "drone6.jpg" } }
+	}
+}
+Transform {	translation	7.44 1.4 4	rotation 0 1 0 1.57	scale 0.9 0.9 0.9	  
+	children Shape {
+		geometry Box { size	3 1.7 0.01 }
+		appearance Appearance { texture	ImageTexture { url "drone7.jpg" } }
+	}
+}

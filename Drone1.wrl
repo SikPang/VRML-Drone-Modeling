@@ -1,0 +1,225 @@
+#VRML V2.0 utf8
+
+DEF	Drone1 Transform	{
+	children [
+	Shape{
+		geometry Box { size	0.2 0.1 4 }
+		appearance Appearance {
+			material Material { diffuseColor 0.7 0 0 }
+		}
+	}
+	Shape{
+		geometry Box { size	4 0.1 0.2 }
+		appearance Appearance {
+			material Material { diffuseColor 0.7 0 0 }
+		}
+	}
+	Transform { translation	0 0.6 0
+		children Shape{
+			geometry Box { size	1.8 0.05 0.05 }
+			appearance Appearance {
+				material Material { diffuseColor 1 1 1 }
+			}
+		}
+	}
+	Transform { translation	0 0.6 0
+		children Shape{
+			geometry Box { size	0.05 0.05 1.8 }
+			appearance Appearance {
+				material Material { diffuseColor 1 1 1 }
+			}
+		}
+	}
+	Transform { rotation  0 1 0 0.785
+		children Shape{
+			geometry Box { size	0.5 0.1 0.5 }
+			appearance Appearance {
+				material Material { diffuseColor 0.7 0 0 }
+			}
+		}
+	}
+	Transform { translation	0 0.7 0
+		children Shape{
+			geometry Box { size	1.3 0.1 1.3 }
+			appearance Appearance {
+				material Material { diffuseColor 0 0.3 0 }
+			}
+		}
+	}
+	Transform { translation	0 0.3 0	rotation 0 1 0 0.785
+		children Shape{
+			geometry Box { size	2 0.4 0.5 }
+			appearance Appearance {
+				material Material { diffuseColor 0.2 0.2 0.2 }
+			}
+		}
+	}
+
+	DEF	Joint1 Group	{
+		children [	  
+			Transform {	 translation 2 0.1 0
+				children Shape {
+					geometry Cylinder { radius 0.2 height 0.3 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			} 
+
+			Transform {	 translation 2 -0.01 0
+				children Shape {
+					geometry Box { size 0.2 0.15 0.2 }
+					appearance Appearance {
+						material Material {diffuseColor	0.55 0.55 0.55 }
+					}
+				}
+			} 
+
+			Transform {	 translation 2 0.5 0
+				children Shape {
+					geometry Cylinder { radius 0.15 height 0.7 }
+					appearance Appearance {
+						material Material {diffuseColor	0.55 0.55 0.55 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.67 0
+				children Shape {
+					geometry Cylinder { radius 0.2 height 0.3 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+	   
+	    	Transform {	 translation 2 0.74 0
+				children Shape {
+					geometry Cylinder { radius 1.15 height 0.45  bottom FALSE top FALSE}
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.67 0
+				children Shape {
+					geometry Box { size 2.3 0.3 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+   
+   			Transform {	 translation 1.1 0.69 0.9 rotation 0 1 0 0.405
+				children Shape {
+					geometry Box { size 0.3 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 0.9 0.69 1.1 rotation 0 1 0 1.165
+				children Shape {
+					geometry Box { size 0.3 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 0.95 0.69 0.95 rotation 0 1 0 0.785
+				children Shape {
+					geometry Cylinder { radius 0.1 height 0.2}
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 1.2 0.69 1.2 rotation 0 1 0 0.705
+				children Shape {
+					geometry Box { size 0.61 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+
+			Transform {	 translation 1.2 0.69 1.2 rotation 0 1 0 0.865
+				children Shape {
+					geometry Box { size 0.61 0.2 0.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.7 0 0 }
+					}
+				}
+			}
+		]
+	}
+	Transform {rotation 0 1 0 1.57 children	USE	Joint1 }
+	Transform {rotation 0 1 0 3.14 children	USE	Joint1 }
+	Transform {rotation 0 1 0 4.71 children	USE	Joint1 }
+
+	DEF	Propeller1 Transform	{ center 2 0 0
+		children [
+		   Transform {	 translation 2 0.9 0
+				children Shape {
+					geometry Cylinder { radius 0.05 height 0.1}
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}								  
+	    	Transform {	 translation 2.55 0.9 0	 rotation 1 0 0 0.5
+				children Shape {
+					geometry Box { size 1.05 0.01 0.15 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}  
+
+			Transform {	 translation 1.45 0.9 0	 rotation 1 0 0 -0.5
+				children Shape {
+					geometry Box { size 1.05 0.01 0.15 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.9 0.55	  rotation 0 0 1 0.5
+				children Shape {
+					geometry Box { size 0.15 0.01 1.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}
+
+			Transform {	 translation 2 0.9 -0.55  rotation 0 0 1 -0.5
+				children Shape {
+					geometry Box { size 0.15 0.01 1.05 }
+					appearance Appearance {
+						material Material {diffuseColor	0.2 0.2 0.2 }
+					}
+				}
+			}
+		]  
+	}
+	Transform {rotation 0 1 0 1.57 children	USE	Propeller1 }
+	Transform {rotation 0 1 0 3.14 children	USE	Propeller1 }
+	Transform {rotation 0 1 0 4.71 children	USE	Propeller1 }
+	DEF MS1 TouchSensor {} 
+]}
+
+DEF	TS1 TimeSensor { cycleInterval 0.3 loop TRUE  stopTime 1}
+DEF	Rotation1 OrientationInterpolator {	
+	key	[0.0, 0.5, 1.0]	
+	keyValue [0.0 1.0 0.0 0.0, 0.0 1.0 0.0 3.14, 0.0 1.0 0.0 6.28]
+}
+ROUTE MS1.touchTime TO TS1.startTime
+ROUTE TS1.fraction_changed TO Rotation1.set_fraction	
+ROUTE Rotation1.value_changed TO Propeller1.rotation
+ROUTE MS1.touchTime TO TS1.stopTime
