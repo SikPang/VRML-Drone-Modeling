@@ -1,13 +1,13 @@
 <div align="center">
 
-# VRML-Drone-Modeling
+# VRML_DroneModeling
   
 <img src="https://user-images.githubusercontent.com/87380790/126590824-06d9d21c-9627-485f-9444-9f50032f0ff7.png" width="80%">
 
   
 <img src="https://user-images.githubusercontent.com/87380790/126590939-bfc56e9e-3d1e-4d4a-a13a-f297967146b9.jpg" width="80%">
   
-  VRML로 모델링한 드론 3기 입니다. (Need to Cortona 3D Viewer)
+  VRML로 모델링한 드론 3기 (Need to Cortona 3D Viewer)
   
   <br/>
   
